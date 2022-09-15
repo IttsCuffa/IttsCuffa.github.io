@@ -36,9 +36,7 @@ a{
     color: var(--white);
     transition: color 0.5s ease-out;
 }
-a:hover{
-    opacity: 0.5;
-}
+
 
 h1{
     margin: 0;
@@ -60,6 +58,9 @@ h4{
 img{
     max-width: 100%;
     height: auto;
+}
+main{
+    background-color:#181818 ;
 }
 /* Utilities */
 .container{
@@ -103,25 +104,86 @@ img{
 .section-menu .btn-menu svg{
     fill: var(--white);
 }
-.section-menu .nav{
+ .nav-menu{
     display: flex;
     flex-direction: column;
    position: fixed;
    left: 0;
    bottom: 4rem;
    width: 100%;
- 
+   background-color:#282934;
+   opacity: 0;
+   pointer-events: none;
+ transition: opacity 0.5s ease-out;
    
 }
-.section-menu .nav a{
+/*Mostrar menu */
+.close-menu{
+    opacity: 1;
+    pointer-events: auto;
+}
+.nav-menu a{
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 1rem;
     cursor: pointer;
     text-align: center;
 
 }
-.section-menu .nav a:hover {
+.nav-menu a:hover {
     color: var(--white);
    background-color: #C77DFF;
+}
+
+.hero{
+   
+}
+
+/* Media queries Tableta */
+@media screen and (min-width:768px){
+
+}
+/* Portatiles */
+@media screen and (min-width:1024px){
+    .header{
+        position: sticky;
+        top: 0;
+    }
+    .section-menu{
+        padding: 1;
+    }
+    .section-menu .btn-menu{
+        display: none;
+    }
+    .nav-menu{
+        width:auto;
+        position: static;
+        flex-direction: row;
+        opacity: 1;
+        pointer-events: auto;
+       
+        
+    }
+    .nav-menu a{
+        padding: 0 1rem;
+        font-size: 1rem;
+    }
+    .nav-menu a:hover{
+        background-color: transparent;
+        color: var(--purple-dark);
+    }
+    .btn-cv{
+        display: block;
+
+    } 
+    .btn-cv button{
+        color: var(--white);
+        border-radius: 25px;
+        padding: 8px;
+        background-color: transparent;
+        border: 1px solid var(--grey-dark);
+        cursor: pointer;
+        font-family: inherit;
+        
+    }
 }

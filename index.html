@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header container">
-        <section class="section-menu">
+    <header class="header " >
+        <section class="section-menu container">
             <div class="logo">
                 <h2>Itts<span>Cuffa</span></h2>
             </div>
@@ -22,11 +22,11 @@
                 <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z"/></svg>
                 <svg  class="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.192 6.344L11.949 10.586 7.707 6.344 6.293 7.758 10.535 12 6.293 16.242 7.707 17.656 11.949 13.414 16.192 17.656 17.606 16.242 13.364 12 17.606 7.758z"/></svg>
             </button>
-            <nav class="nav none">
+            <nav class="nav-menu">
                 <a href="#inicio">Home</a>
                 <a href="#portafolio">Portfolio</a>
                 <a href="#educacion">Education</a>
-                <a href="#contratame">Get in touch</a>
+                <a href="#contacto">Get in touch</a>
             </nav>
             <div class="btn-cv none">
                 <button>Download cv</button>
@@ -35,15 +35,19 @@
         
     </header>
     <main>
-        <section class="hero container">
-            <div class="hero-img">
-                <img src="assets/img-user.png" alt="img-ittscuffa">
+        <section class="hero" id="inicio">
+            <div class="container-hero container">
+                <div class="hero-img">
+                    <img src="assets/pexels-mustafa-ezz-927524-removebg-preview.png" alt="img-ittscuffa">
+                </div>
+                <div class="hero-information">
+                    <h2>Hello,im</h2>
+                    <h1>Rios Facundo Isaias</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum natus hic sunt odio laudantium delectus adipisci praesentium? Quasi, suscipit dolor.</p>
+                    <a href="#contacto" class="btn">Contactame</a>
+                </div>
             </div>
-            <div class="hero-information">
-                <h2>Hello,im</h2>
-                <h1>Rios Facundo Isaias</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum natus hic sunt odio laudantium delectus adipisci praesentium? Quasi, suscipit dolor.</p>
-            </div>
+          
         </section>
        
         <section id="portafolio" class="portafolio container">
@@ -58,7 +62,7 @@
             </div>
         </section>
         <section id="educacion" class="educacion container">
-
+            <h2>educacion</h2>
         </section>
         <section id="contacto" class="contacto container">
             <form action="">
@@ -78,5 +82,6 @@
         </section>
     </main>
     <footer>@RiosFacundoIsaias 2022</footer>
+    <script src="script.js"></script>
 </body>
 </html>
