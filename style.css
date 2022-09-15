@@ -1,0 +1,127 @@
+/* Custom Properties */
+:root{
+    --blue-primary:#29599D;
+    --blue-primary-75:rgba(41, 89, 157, 0.75);
+    --purple-dark:#5A189A;
+    --purple:#9D4AED;
+    --purple-pastel:#C77DFF;
+    --black:#363440;
+    --white:#fcfbfb;
+    --grey-dark:#3B3941;
+    --grey-soft:#575A62;
+    --font:'Poppins', sans-serif;
+    --max-width:1200px;
+}
+/* Reset */
+html{
+    box-sizing: border-box;
+    font-family: var(--font);
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+/* PARA QUITAR POR DEFECTO LOS MARGENES QUE TIENE EL NAVEGADOR */
+body{
+    margin: 0;
+    overflow-x: hidden;
+    color: var(--white);
+    background-color: var(--black);
+}
+
+a{
+    color: var(--white);
+    transition: color 0.5s ease-out;
+}
+a:hover{
+    opacity: 0.5;
+}
+
+h1{
+    margin: 0;
+    font-size: 2rem;
+}
+h2{
+    margin: 0;
+    font-size: 1.5rem;
+}
+h3{
+    margin: 0;
+    font-size: 1.25rem;
+}
+h4{
+    margin: 0;
+    font-size: 1rem;
+}
+/* img responsive */
+img{
+    max-width: 100%;
+    height: auto;
+}
+/* Utilities */
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--max-width);
+}
+.none{
+    display: none;
+}
+/* Site styles */
+.header{
+    background-color: #282934;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    /* al ser fixed pierde sus valores de ancho y alto y hay que establecerla devuelta */
+    width: 100%;
+    height: 4rem;
+}
+.section-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+.section-menu .logo span{
+    color: var(--purple-dark);
+
+
+}
+.section-menu .btn-menu{
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--purple-pastel);
+   
+    cursor: pointer;
+}
+.section-menu .btn-menu svg{
+    fill: var(--white);
+}
+.section-menu .nav{
+    display: flex;
+    flex-direction: column;
+   position: fixed;
+   left: 0;
+   bottom: 4rem;
+   width: 100%;
+ 
+   
+}
+.section-menu .nav a{
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: center;
+
+}
+.section-menu .nav a:hover {
+    color: var(--white);
+   background-color: #C77DFF;
+}
