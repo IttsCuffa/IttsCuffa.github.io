@@ -1,0 +1,3 @@
+section{
+    min-height:100vh; ->Es para que por defecto ocupe el 100% del viewport pero si alguna seccion es mas grande y con contenido pueda crecer y adaptarse de forma automatica
+}
