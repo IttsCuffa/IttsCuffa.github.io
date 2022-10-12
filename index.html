@@ -1,128 +1,303 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rios Facundo-Portfolio</title>
     <!-- Goole fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Css -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="header " >
-        <section class="section-menu container">
-            <div class="logo">
-                <h2>Itts<span>Cuffa</span></h2>
-            </div>
-            <button class="btn-menu">
-                <svg  xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z"/></svg>
-                <svg  class="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.192 6.344L11.949 10.586 7.707 6.344 6.293 7.758 10.535 12 6.293 16.242 7.707 17.656 11.949 13.414 16.192 17.656 17.606 16.242 13.364 12 17.606 7.758z"/></svg>
-            </button>
-            <nav class="nav-menu">
-                <a href="#inicio">Home</a>
-                <a href="#portafolio">Portfolio</a>
-                <a href="#educacion">Education</a>
-                <a href="#contacto">Get in touch</a>
-            </nav>
-            <div class="btn-cta none">
-                <button>Hire me</button>
-            </div>
-        </section>
-        
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <section class="section-menu container">
+        <div class="logo">
+          <h2>RF
+        </div>
+        <button class="btn-menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="36"
+            height="36"
+            viewBox="0 0 24 24"
+          >
+            <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z" />
+          </svg>
+          <svg
+            class="none"
+            xmlns="http://www.w3.org/2000/svg"
+            width="36"
+            height="36"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.192 6.344L11.949 10.586 7.707 6.344 6.293 7.758 10.535 12 6.293 16.242 7.707 17.656 11.949 13.414 16.192 17.656 17.606 16.242 13.364 12 17.606 7.758z"
+            />
+          </svg>
+        </button>
+
+        <nav class="nav-menu">
+          <div class="nav-items">
+            <a href="#inicio" class="btn-active">Home</a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="#000000"
+              width="24"
+              height="24"
+            >
+              <path
+                d="M12.71 2.29a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 0 1.42A1 1 0 0 0 3 13h1v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7h1a1 1 0 0 0 1-1 1 1 0 0 0-.29-.71zM6 20v-9.59l6-6 6 6V20z"
+              ></path>
+            </svg>
+          </div>
+          <div class="nav-items">
+            <a href="#portafolio">Portfolio</a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="#000000"
+              width="24"
+              height="24"
+            >
+              <path
+                d="M19 3H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM5 19V5h14l.002 14H5z"
+              ></path>
+              <path d="m10 14-1-1-3 4h12l-5-7z"></path>
+            </svg>
+          </div>
+          <div class="nav-items">
+            <a href="#educacion"> Education</a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M2 7v1l11 4 9-4V7L11 4z" />
+              <path
+                d="M4 11v4.267c0 1.621 4.001 3.893 9 3.734 4-.126 6.586-1.972 7-3.467.024-.089.037-.178.037-.268V11L13 14l-5-1.667v3.213l-1-.364V12l-3-1z"
+              />
+            </svg>
+          </div>
+          <div class="nav-items">
+            <a href="#contacto"> Get in touch</a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="#000000"
+              width="24"
+              height="24"
+            >
+              <path
+                d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
+              ></path>
+            </svg>
+          </div>
+        </nav>
+      </section>
     </header>
     <main>
-        <section class="hero cont" id="inicio">
-            <div class="container-hero container">
-                <div class="hero-img">
-                    <img src="assets/uPZm9iK.jpeg" alt="img-ittscuffa">
-                </div>
-                <div class="hero-information">
-                    <h2>Hello,I'm</h2>
-                    <h1>Facundo Isaias Rios</h1>
-                  
-                   <p>Soy analista en sistemas y apasionado del desarrollo web</p>
-                   <div class="container-btn">
-                    <a href="#contacto" class="btn cta">Contactame</a>
-                    <a href="#portafolio" class="btn projects">Projects</a>
-                   </div>
-                   
-                </div>
+      <section class="home" id="inicio">
+        <div class="container-home container">
+          <div class="container-user-profile">
+            <img
+              src="assets/fotocv_1-removebg-preview.png"
+              alt="user-profile"
+              class="user-img"
+            />
+          </div>
+
+          <div class="home-information">
+            <h2>Hello,I'm</h2>
+            <h1>Facundo Isaias Rios</h1>
+
+            <p>Soy analista en sistemas y apasionado del desarrollo web</p>
+            <a href="#contacto" class="btn cta">Contactame</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="portafolio" class="portafolio container">
+        <h2>Projects</h2>
+        <div class="projects">
+          <div class="container-project">
+            <div class="portfolio-img">
+              <img src="assets/Takeachef-logo.png" alt="Take a chef" />
             </div>
-          
-        </section>
+
+            <div class="info">
+              <h3>Take a chef</h3>
+              <p>Proyecto final de la carrera analista en sistemas</p>
+              <a
+                href="https://ittscuffa.github.io/takeachef/"
+                target="_blank"
+                rel="noopener"
+                class="btn project"
+                >Ver proyecto</a
+              >
+            </div>
+          </div>
+          <div class="container-project">
+            <img
+              src="assets/formularioOspin.png"
+              alt="Take a chef"
+              class="portfolio-img"
+            />
+            <div class="info">
+              <h3>Formulario Hospital</h3>
+              <p>Proyecto final de la carrera analista en sistemas</p>
+              <a
+                href="https://ittscuffa.github.io/proyecto-opin/"
+                target="_blank"
+                rel="noopener"
+                class="btn project"
+                >Ver Proyecto</a
+              >
+            </div>
+          </div>
+          <div class="container-project">
+            <img
+              src="assets/blur-card.png"
+              alt="card-blur"
+              class="portfolio-img"
+            />
+            <div class="info">
+              <h3>Take a chef</h3>
+              <p>Proyecto final de la carrera analista en sistemas</p>
+              <a
+                href="https://ittscuffa.github.io/blur-card/"
+                target="_blank"
+                rel="noopener"
+                class="btn project"
+                >Ver proyecto</a
+              >
+            </div>
+          </div>
+          <div class="container-project">
+            <img
+              src="assets/takeachef.png"
+              alt="Take a chef"
+              class="portfolio-img"
+            />
+            <div class="info">
+              <h3>Take a chef</h3>
+              <p>Proyecto final de la carrera analista en sistemas</p>
+              <a
+                href="https://ittscuffa.github.io/takeachef/"
+                target="_blank"
+                rel="noopener"
+                class="btn project"
+                >Ver proyecto</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="educacion" class="educacion container">
+        <h2>educacion</h2>
+      </section>
+
+      <section id="contacto" class="contacto container">
+        <h2>Get in touch</h2>
+
+        <div class="grid-info-contact">
+          <div class="item contact">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="#000000"
+              width="24"
+              height="24"
+            >
+              <path
+                d="M12 2C7.589 2 4 5.589 4 9.995 3.971 16.44 11.696 21.784 12 22c0 0 8.029-5.56 8-12 0-4.411-3.589-8-8-8zm0 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"
+              ></path>
+            </svg>
+            <p>Buenos Aires,Argentina.</p>
+          </div>
+          <div class="item gmail">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="#000000"
+              width="24"
+              height="24"
+            >
+              <path
+                d="m18.73 5.41-1.28 1L12 10.46 6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a2 2 0 0 0-3.27-1.64z"
+              ></path>
+            </svg>
+            <p>riosfacundo.isaias@gmail.com</p>
+          </div>
+          <div class="item phone">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="#000000"
+              width="24"
+              height="24"
+            >
+              <path
+                d="m20.487 17.14-4.065-3.696a1.001 1.001 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66-1.192-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.29.649c-.015.25-.301 6.172 4.291 10.766C11.305 20.707 16.323 21 17.705 21c.202 0 .326-.006.359-.008a.992.992 0 0 0 .648-.291l1.86-2.171a.997.997 0 0 0-.085-1.39z"
+              ></path>
+            </svg>
+            <p>+54 58218602</p>
+          </div>
+        </div>
+
+        <form action="#" class="form">
+        <!--   <h2>Contact form</h2> -->
+          <div class="container-form-name">
+            <label for="nombre">Your Name </label>
+            <input
+              type="text"
+              placeholder="Name"
+              id="nombre"
+              class="input-form"
+            />
+          </div>
+         
+         <div class="container-form-mail ">
+  <label for="email">Mail</label>
+  <input
+    type="email"
+    placeholder="Email"
+    id="email"
+    class="input-form"
+  />
+          </div>
+         <div class="container-form-motives ">
+          <label for="motivo">Motives</label>
+          <input
+            type="text"
+            placeholder="Motivo"
+            id="motivo"
+            class="input-form"
+          />
+         </div>
+         <div class="container-form-message ">
+          <label for="textarea">Message</label>
+          <textarea
+            name="comment"
+            id="textarea"
+           
+            placeholder="Message"
+          ></textarea>
+         </div>
+          <button class="btn enviar">Enviar</button>
+        </form>
        
-        <section id="portafolio" class="portafolio container ">
-          <h2>Projects</h2>
-            <div class="container-project project1">
-                <a href="https://ittscuffa.github.io/takeachef/" >
-                  <div class="back-info">
-                    <h2>Take a chef</h2>
-                    <p>Proyecto final de la carrera analista en sistemas</p>
-                  </div>
-                </a>
-            </div>
-              <div class="container-project project2">
-                <a href="https://ittscuffa.github.io/takeachef/" >
-                  <div class="front">
-                    <h2>Take a chef</h2>
-                    <p>Proyecto final de la carrera analista en sistemas</p>
-                  </div>
-                  <div class="back"></div>
-                </a>
-              </div>
-              <div class="container-project project3">
-                <a href="https://ittscuffa.github.io/takeachef/" >
-                  <div class="front">
-                    <h2>Take a chef</h2>
-                    <p>Proyecto final de la carrera analista en sistemas</p>
-                  </div>
-                  <div class="back"></div>
-                </a>
-              </div>
-              <div class="container-project project4">
-                <a href="https://ittscuffa.github.io/takeachef/" >
-                  <div class="front">
-                    <h2>Take a chef</h2>
-                    <p>Proyecto final de la carrera analista en sistemas</p>
-                  </div>
-                  <div class="back"></div>
-                </a>
-              </div>
-              <div class="container-project project5">
-                <a href="https://ittscuffa.github.io/takeachef/" >
-                  <div class="front">
-                    <h2>Take a chef</h2>
-                    <p>Proyecto final de la carrera analista en sistemas</p>
-                  </div>
-                  <div class="back"></div>
-                </a>
-              </div>
-        </section>
-        <section id="educacion" class="educacion container">
-            <h2>educacion</h2>
-        </section>
-        <section id="contacto" class="contacto container">
-            <form action="">
-                <div class="container-option">
-                    <label for="nombre"></label>
-                    <input type="text" placeholder="Name" id="nombre" class="input-form">
-                </div>
-                <div class="container-option">
-                    <label for="email"></label>
-                    <input type="email" placeholder="Name" id="email" class="input-form">
-                </div>
-                <div class="container-option">
-                    <textarea name="comment" id="" cols="30" rows="10"></textarea>
-                </div>
-                
-            </form>
-        </section>
+      </section>
     </main>
     <footer>@RiosFacundoIsaias 2022</footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

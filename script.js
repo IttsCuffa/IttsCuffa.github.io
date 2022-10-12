@@ -3,7 +3,8 @@
     const d=document;
     const $btnMenu=d.querySelector(".btn-menu");
     const $nav=d.querySelector(".nav-menu");
-
+    const $bgBlack=d.querySelector(".bg-black")
+    /* Abrir menu */
     $btnMenu.addEventListener("click",e=>{
         $btnMenu.firstElementChild.classList.toggle("none")
         $btnMenu.lastElementChild.classList.toggle("none")
@@ -12,9 +13,10 @@
     })
     /* Este evento aparecera cuando apretemos en unos de los enlaces validos */
     d.addEventListener("click",(e)=>{
-        if(!e.target.matches(".nav-menu a")) return false;
+        if(!e.target.matches(".nav-menu a")) return false; 
         $btnMenu.firstElementChild.classList.remove("none")
         $btnMenu.lastElementChild.classList.add("none")
         $nav.classList.remove("close-menu");
     })
+
 })();
