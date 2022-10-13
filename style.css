@@ -40,10 +40,12 @@ a{
 h1{
     margin: 0;
     font-size: 2rem;
+
 }
 h2{
     margin: 0;
     font-size: 1.5rem;
+    text-align: center;
 }
 h3{
     margin: 0;
@@ -112,11 +114,13 @@ p{
     outline: none;
     border: none;
     cursor: pointer;
+    background-color: transparent;
 }
- .btn-menu svg{
+.btn-mode svg,
+.btn-menu svg{
     fill: var(--purple-dark);
- 
 }
+
  .nav-menu{
     display: grid;
     grid-template-columns: repeat(2,auto);
@@ -142,16 +146,7 @@ p{
     pointer-events: auto;
     box-shadow: 0px -13px 10px -7px rgba(0, 0, 0, 0.2);
 }
-/* Dark-mode */
-.dark-mode{
-    background-color: var(--dark-mode-bg);
-    color:var(--white);
 
-}
-.dark-mode-menu-nav{
-    background-color: transparent;
-   color: var(--white);
-}
 
 .nav-items {
 display: flex;
@@ -162,7 +157,7 @@ cursor: pointer;
 
 
 }
-a{
+.menu-link{
     text-decoration: none;
     color: var(--black);
 
@@ -170,7 +165,17 @@ a{
 }
 
 
+/* Dark-mode */
+.dark-mode{
+    background-color: var(--dark-mode-bg);
+    color:var(--white);
+    fill: var(--purple-dark);
 
+}
+
+.dark-mode-menu-link-svg{
+    fill: var(--purple-dark);
+}
 
 
 .container-home{
@@ -218,7 +223,8 @@ object-fit: cover;
     margin-top: 1rem;
     width:90%;
     background-color: var(--purple-pastel);
-    color: var(--white)
+    color: var(--white);
+    border: none;
  }
 .btn.cv{
     color: var(--purple-pastel);
@@ -289,10 +295,7 @@ object-fit: cover;
     border-radius: 5px;
     
 }
-.contacto h2{
-    color: var(--black);
-    text-align: center;
-}
+
 .grid-info-contact{
     display: grid;
     grid-template-columns: repeat(1,1fr);

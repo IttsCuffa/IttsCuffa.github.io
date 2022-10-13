@@ -25,17 +25,24 @@
     const d=document;
    const $btnMode=d.querySelector(".btn-mode");
    const body=d.querySelector("body");
-    const $navItems=d.querySelector(".nav-items ")
+    const $menuLinks=d.querySelectorAll(".menu-link ")
    const $navMenu=d.querySelector(".nav-menu")
    const header=d.querySelector("header")
+   const $svgLinks=d.querySelectorAll(".svg-link")
     $btnMode.addEventListener("click",e=>{
         $btnMode.firstElementChild.classList.add("none");
         $btnMode.lastElementChild.classList.remove("none");
-        body.classList.add("dark-mode");
-       header.classList.add("dark-mode");
-        $navMenu.classList.add("dark-mode");
-        $navItems.classList.add("dark-mode")
-        /* $navItems.classList.add("dark-mode") */
+        body.classList.toggle("dark-mode");
+       header.classList.toggle("dark-mode");
+        $navMenu.classList.toggle("dark-mode");
+        /* Nav items  */
+        $menuLinks.forEach(el => {
+            el.classList.toggle("dark-mode")
+          });
+       $svgLinks.forEach(el=>{
+        el.classList.toggle("dark-mode")
+       })
+       
     })
 
 })();
