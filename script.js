@@ -35,6 +35,7 @@
        header.classList.add("dark-mode");
         $navMenu.classList.add("dark-mode");
         $navItems.classList.add("dark-mode")
+        /* $navItems.classList.add("dark-mode") */
     })
 
 })();
