@@ -7,3 +7,5 @@ text-decoration:underline
 
 notas->
 Arreglar el menu en movil,al aparecer el bg oscuro  y el btn de el menu que se cambie dependiendo la interaccion con el usuario
+
+css grid->investigar place items y place self

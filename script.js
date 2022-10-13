@@ -20,3 +20,21 @@
     })
 
 })();
+/* Dark-mode & Light-mode */
+(()=>{
+    const d=document;
+   const $btnMode=d.querySelector(".btn-mode");
+   const body=d.querySelector("body");
+    const $navItems=d.querySelector(".nav-items ")
+   const $navMenu=d.querySelector(".nav-menu")
+   const header=d.querySelector("header")
+    $btnMode.addEventListener("click",e=>{
+        $btnMode.firstElementChild.classList.add("none");
+        $btnMode.lastElementChild.classList.remove("none");
+        body.classList.add("dark-mode");
+       header.classList.add("dark-mode");
+        $navMenu.classList.add("dark-mode");
+        $navItems.classList.add("dark-mode")
+    })
+
+})();
