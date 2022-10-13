@@ -29,7 +29,7 @@ body{
     margin: 0;
     overflow-x: hidden;
     color: #0d0e14;
-
+   
 }
 
 a{
@@ -69,6 +69,7 @@ p{
     margin-left: auto;
     margin-right: auto;
     max-width: var(--max-width);
+   
    
 }
 .none{
@@ -184,6 +185,7 @@ cursor: pointer;
    grid-template-rows: 40% 60%;
    place-items: center;
    margin-top: 0.5rem;
+  
    
 }
 .container-home .container-user-profile{
@@ -231,10 +233,15 @@ object-fit: cover;
     background-color: var(--white);
     border: 1px solid var(--purple-pastel);
 }
- 
+ /* Educacion */
+ .educacion{
+    height: 100vh;
+ }
 /* Portafolio */
 .portafolio{
     margin-top: 1rem;
+  
+    
 }
 .portafolio h2{
  
@@ -412,7 +419,7 @@ footer{
         grid-area: btn;
         height: 50%;
         width: 50%;
-        place-self:end end;
+        place-self:start end;
     }
     
  }
@@ -455,10 +462,13 @@ footer{
    
    
   /* Portafolio */
+  .portafolio{
+    height: 500px;
+  }
   .projects{
    
     grid-template-columns: repeat(4,auto);
-    grid-template-rows: repeat(1,400px);
+    grid-template-rows: repeat(1,auto);
  
   
     }
