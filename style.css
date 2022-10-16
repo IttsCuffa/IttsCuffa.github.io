@@ -120,6 +120,7 @@ p{
 .btn-mode svg,
 .btn-menu svg{
     fill: var(--purple-dark);
+    pointer-events: none;
 }
 
  .nav-menu{
@@ -243,9 +244,19 @@ object-fit: cover;
   
     
 }
-.portafolio h2{
+.container-btns-projects-header{
+    display: flex;
+    justify-content: space-between;
+     width: 90%;
  
-    margin-bottom: 1rem;
+    margin:1.5rem auto;
+}
+.verMas{
+    width: auto;
+    border: 25px;
+    margin-top: 0;
+    padding: 5px;
+
 }
 .projects{
     display: grid;
@@ -366,6 +377,48 @@ object-fit: cover;
     width: 100%;
 
 }
+
+/* ********** Modal ********** */
+.modal {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black-alpha-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s;
+  }
+  
+  .modal-content {
+    position: relative;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+  
+  .modal-close svg {
+    width: 3rem;
+    height: 3rem;
+    fill: var(--first-color);
+  }
+  
+  .modal[id|="trabajo"]:target {
+    opacity: 1;
+    pointer-events: auto;
+  }
+.modal#gracias:target {
+    opacity: 1;
+    pointer-events: auto;
+  }
 footer{
     margin-bottom: 4rem;
 }
@@ -384,10 +437,73 @@ footer{
       
     }
     .grid-info-contact{
-        grid-template-columns: repeat(3,400px);
+        grid-template-columns: repeat(3,auto);
         grid-template-rows: repeat(1,1fr);
     }
     
+    
+    
+ }
+/* Portatiles */
+@media screen and (min-width:1024px){
+    .header{
+        position: sticky;
+        top: 0;
+    }
+    .section-menu{
+       
+        padding: 1;
+    }
+    .section-menu .btn-menu{
+        display: none;
+    }
+    
+    .nav-menu{
+        width:auto;
+        position: static;
+        opacity: 1;
+        pointer-events: auto;
+       display: grid;
+       grid-template-columns: repeat(5,auto);
+       grid-template-rows: repeat(1,1fr);
+        
+    }
+    .nav-menu a{
+        padding: 0 1rem;
+        font-size: 1rem;
+    }
+    .nav-items svg{
+        display: none;
+    }
+    .btn-active{
+       color:var(--purple-dark);
+    
+       
+    }
+    .home{
+        height: 100vh;
+    }
+   
+   /*  */
+  /* Portafolio */
+  .portafolio{
+    
+    height: 500px;
+    height: 100vh;
+ 
+  }
+ 
+  .projects{
+   
+    grid-template-columns: repeat(4,auto);
+    grid-template-rows: repeat(1,auto);
+ 
+  
+    }
+    .grid-info-contact{
+        grid-template-columns: repeat(3,400px);
+        grid-template-rows: repeat(1,1fr);
+    }
     .form{
 
         grid-template-columns: repeat(2,400px);
@@ -420,57 +536,6 @@ footer{
         height: 50%;
         width: 50%;
         place-self:start end;
-    }
-    
- }
-/* Portatiles */
-@media screen and (min-width:1024px){
-    .header{
-        position: sticky;
-        top: 0;
-    }
-    .section-menu{
-        padding: 1;
-    }
-    .section-menu .btn-menu{
-        display: none;
-    }
-    
-    .nav-menu{
-        width:auto;
-        position: static;
-        opacity: 1;
-        pointer-events: auto;
-       display: grid;
-       grid-template-columns: repeat(5,auto);
-       grid-template-rows: repeat(1,1fr);
-        
-    }
-    .nav-menu a{
-        padding: 0 1rem;
-        font-size: 1rem;
-    }
-    .nav-items svg{
-        display: none;
-    }
-    .btn-active{
-       color:var(--purple-dark);
-    
-       
-    }
-    
-   
-   
-  /* Portafolio */
-  .portafolio{
-    height: 500px;
-  }
-  .projects{
-   
-    grid-template-columns: repeat(4,auto);
-    grid-template-rows: repeat(1,auto);
- 
-  
     }
    
 }
