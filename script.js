@@ -58,39 +58,68 @@
    const $navMenu=d.querySelector(".nav-menu")
    const header=d.querySelector("header")
    const $svgLinks=d.querySelectorAll(".svg-link")
-        d.addEventListener("click",e=>{
-           /*  if(e.target.matches(".btn-mode svg")) {
-                if($btnMode.classList)
-            } */
-            
+   const ls=localStorage;
+    const $moon=d.querySelector(".moon");
+    const $sun=d.querySelector(".sun");
+        
+$btnMode.addEventListener("click",e=>{
+   if($moon.matches(".none")){
+        lightMode();
+   }else{
+ 
+    darkMode();
+   }
+})
+   /* carga del dom-testing de dark o light */
+        d.addEventListener("DOMContentLoaded",e=>{
+            /* Si al obtener el elemento(clave) no existe(es igual a null) entonces le establecemos una clave llamada theme con su valor dark */
+            if(ls.getItem("theme")===null){
+                ls.setItem("theme","dark")
+            }
+
+            if(ls.getItem("theme")==="dark"){
+                darkMode();
+            }
+            if(ls.getItem("theme")==="light"){
+                lightMode();
+            }
            
         })
 
-        let darkMode=()=>{}
+        let darkMode=()=>{
+            $moon.classList.add("none");
+            $sun.classList.remove("none");
+            body.classList.add("dark-mode");
+            header.classList.add("dark-mode");
+             $navMenu.classList.add("dark-mode");
+           
+             $menuLinks.forEach(el => {
+                 el.classList.add("dark-mode")
+               });
+            $svgLinks.forEach(el=>{
+             el.classList.add("dark-mode")
+
+            })
+            ls.setItem("theme","dark")
+        }
      
-        body.classList.add("dark-mode");
-       header.classList.add("dark-mode");
-        $navMenu.classList.add("dark-mode");
-      
-        $menuLinks.forEach(el => {
-            el.classList.add("dark-mode")
-          });
-       $svgLinks.forEach(el=>{
-        el.classList.add("dark-mode")
-       })
-        let lightMode=()=>{}
        
-        body.classList.remove("dark-mode");
-       header.classList.remove("dark-mode");
-        $navMenu.classList.remove("dark-mode");
-      
-        $menuLinks.forEach(el => {
-            el.classList.remove("dark-mode")
-          });
-       $svgLinks.forEach(el=>{
-        el.classList.remove("dark-mode")
-       })
-        
+        let lightMode=()=>{
+            $sun.classList.add("none");
+            $moon.classList.remove("none");
+            body.classList.remove("dark-mode");
+            header.classList.remove("dark-mode");
+             $navMenu.classList.remove("dark-mode");
+           
+             $menuLinks.forEach(el => {
+                 el.classList.remove("dark-mode")
+               });
+            $svgLinks.forEach(el=>{
+             el.classList.remove("dark-mode")
+            })
+            ls.setItem("theme","light")
+        }
+       
     })();
 
 
