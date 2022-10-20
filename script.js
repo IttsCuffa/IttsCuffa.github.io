@@ -61,6 +61,7 @@
    const ls=localStorage;
     const $moon=d.querySelector(".moon");
     const $sun=d.querySelector(".sun");
+    $containerRedes=d.querySelectorAll(".container-redes svg")
         
 $btnMode.addEventListener("click",e=>{
    if($moon.matches(".none")){
@@ -92,6 +93,7 @@ $btnMode.addEventListener("click",e=>{
             body.classList.add("dark-mode");
             header.classList.add("dark-mode");
              $navMenu.classList.add("dark-mode");
+             
            
              $menuLinks.forEach(el => {
                  el.classList.add("dark-mode")
@@ -100,6 +102,10 @@ $btnMode.addEventListener("click",e=>{
              el.classList.add("dark-mode")
 
             })
+            $containerRedes.forEach(el=>{
+                el.classList.add("dark-mode")
+   
+               })
             ls.setItem("theme","dark")
         }
      
@@ -116,57 +122,99 @@ $btnMode.addEventListener("click",e=>{
                });
             $svgLinks.forEach(el=>{
              el.classList.remove("dark-mode")
-            })
+            });
+            $containerRedes.forEach(el=>{
+                el.classList.remove("dark-mode")
+   
+               })
             ls.setItem("theme","light")
         }
        
     })();
 
+/*Expresiones regulares-formulario  */
+(()=> {
+    const d=document,
+    $inputs=d.querySelectorAll(".input-form"),
+    $textarea=d.querySelector("textarea"),
+    $form=d.querySelector("form")
+
+   
 
 
+   const expresiones={
+    nombre:/^[a-zA-Z0-9\_\-]{4,16}$/,//Letras ,numeros,guion y guion bajo
+   correo:/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+   motivos:/^[a-zA-Z0-9\-]{4,20}$/, //Letras ,numeros,guion 
+   mensaje:/^[a-zA-ZÀ-ÿ-u00f1-u00d10-9\_\-]{10,150}$/
+   }
 
+ const campos={
+    nombre:false,
+    correo:false,
+    motivos:false,
+    mensaje:false
+ }
+   
+   const validarFormulario=(e)=>{
+         
+       switch(e.target.name){
+        case "name":
+           validarCampos(expresiones.nombre,e.target,"name")
+        break;
+        case "email":
+            validarCampos(expresiones.correo,e.target,"mail")
+        break;
+        case "motives":
+            validarCampos(expresiones.motivos,e.target,"motives")
+        break;
+        case "message":
+            validarCampos(expresiones.mensaje,e.target,"textarea")
+        break;
+       }
+        
+   }
+   const validarCampos=(expresion,input,campo)=>{
+    if(expresion.test(input.value)){
+       document.querySelector(`#grupo${campo} .input-form`).classList.add("input-form-correcto")
+       document.querySelector( `#grupo${campo} .input-form`).classList.remove("input-form-incorrecto");
+    
+       document.querySelector( `#grupo${campo} .form-input-error`).classList.add("none")
+        campos[campo]=true;
+  console.log( campos[campo])
+ }else{
+   
+    document.querySelector(`#grupo${campo} .input-form`).classList.remove("input-form-correcto")
+    document.querySelector( `#grupo${campo} .input-form`).classList.add("input-form-incorrecto")
+    document.querySelector( `#grupo${campo} .form-input-error`).classList.remove("none")
+    campos[campo]=false;
+ }
+   }
+   $inputs.forEach((el)=> {
+    el.addEventListener("keyup",validarFormulario)
+    el.addEventListener("blur",validarFormulario)
+    
 
-  /*  (()=>{ */
-    /*   /* localStorage */
-     /*  saveLocalStorage(body.classList.value); */
-      /*  console.log(body.classList.value) 
- 
-      let saveLocalStorage=(mode) =>{
-        localStorage.setItem( "theme",mode);
-    }
+    });
 
-    let getLocalStorage=()=>{
-        localStorage.getItem("theme")
-    }
-   })();
-*/
-/* Contacto form */
-(()=>{
-    const d=document;
-    const $form=d.querySelector(".form")
-    const $response=d.querySelector(".contact-form-response")
-    $form.addEventListener("submit",e=>{
+  /*  $textarea.addEventListener("keyup",validarFormulario); */
+
+   $form.addEventListener("submit",(e)=>{
+    console.log(campos.nombre)
         e.preventDefault();
-        fetch("https://formsubmit.co/ajax/riosfacundo.isaias@gmail.com",{
-            method:"POST",
-            body: new FormData(e.target),
-        }).then((res)=>(res.ok ? res.json():Promise.reject(res)))
-        .then((json)=>{
-    /* ventana modal y loader faltan */
-    location.hash="#gracias";
-    $form.reset()
-
-        })
+        if(campos.nombre && campos.correo && campos.motivos){
+            $form.reset();
            
-        .catch((err)=>{
-            let message=err.statusText || "Ocurrio un error al enviar el formulario,intente nuevamente";
-            $response.querySelector("h3").innerHTML=`Error${err.status}:${message}`;
+            console.log("Enviado");
 
-        }).finally(()=>{
-            setTimeout(()=>{
-                location.hash="#close";
-            },3000)
-        })
-    })
+       }else{
+        console.log(campos.nombre)
+        console.log("error")
+       }
+
+          
+   })
+  
+
+   
 })();
-/*  */

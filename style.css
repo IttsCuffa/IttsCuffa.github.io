@@ -353,28 +353,44 @@ object-fit: cover;
  
 }
 
-.form .input-form{
+.input-form{
   background-color: var(--grey-dark);
     width: 100%;
    height: 3rem;
     padding: 10px;
-    border: 1px solid var(--black);
+    border:none;
     border-radius: 5px;
     outline-color: var(--purple-dark);
+/* outline: none; */
     margin-bottom: 1rem;
     font-weight: bold;
+}
+.input-form-correcto,
+.textarea-form-correcto{
+  outline: 3px solid green;
+  
+}
+.input-form-incorrecto,
+.textarea-form-incorrecto{
+    outline: 3px solid red;
+}
+.form-input-error{
+    font-size: 12px;
+   
 }
 .form textarea{
     border-radius: 5px;
     width: 100%;
     height:300px;
     resize: none;
-    outline-color: var(--purple-dark);
+    outline:none;
     background-color: var(--grey-dark);
+    border: none;
 
 }
 .enviar{
     width: 100%;
+    cursor: pointer;
 
 }
 
@@ -421,6 +437,28 @@ object-fit: cover;
   }
 footer{
     margin-bottom: 4rem;
+   height: var(--height-nav);
+
+}
+.container-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+  
+  
+
+}
+.container-footer svg{
+   /*  fill:var(--white); */
+    cursor: pointer;
+
+    border-radius: 50%;
+
+}
+.container-footer svg:hover{
+/*   background-color: var(--purple-pastel); */
 }
 
 /* Media queries Tableta */
