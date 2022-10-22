@@ -20,35 +20,7 @@
     })
 
 })();
-/* Dark-mode & Light-mode */
-
-
-/* El funcionamiento es correcto pero la logica esta mal. */
-/* (()=>{
-    const d=document;
-   const $btnMode=d.querySelector(".btn-mode");
-   const body=d.querySelector("body");
-    const $menuLinks=d.querySelectorAll(".menu-link ")
-   const $navMenu=d.querySelector(".nav-menu")
-   const header=d.querySelector("header")
-   const $svgLinks=d.querySelectorAll(".svg-link")
-    $btnMode.addEventListener("click",e=>{
-        $btnMode.firstElementChild.classList.toggle("none");
-        $btnMode.lastElementChild.classList.toggle("none");
-        body.classList.toggle("dark-mode");
-       header.classList.toggle("dark-mode");
-        $navMenu.classList.toggle("dark-mode");
-      
-        $menuLinks.forEach(el => {
-            el.classList.toggle("dark-mode")
-          });
-       $svgLinks.forEach(el=>{
-        el.classList.toggle("dark-mode")
-       })
-     
-    })
-    })(); */
-
+/* dark mode */
 
     (()=>{
         const d=document;
@@ -137,7 +109,7 @@ $btnMode.addEventListener("click",e=>{
     const d=document,
     $inputs=d.querySelectorAll(".input-form"),
     $textarea=d.querySelector("textarea"),
-    $form=d.querySelector("form")
+    $form=d.querySelector(".form")
 
    
 
@@ -150,10 +122,10 @@ $btnMode.addEventListener("click",e=>{
    }
 
  const campos={
-    nombre:false,
-    correo:false,
-    motivos:false,
-    mensaje:false
+    name:false,
+    email:false,
+    motives:false,
+    textarea:false
  }
    
    const validarFormulario=(e)=>{
@@ -163,12 +135,12 @@ $btnMode.addEventListener("click",e=>{
            validarCampos(expresiones.nombre,e.target,"name")
         break;
         case "email":
-            validarCampos(expresiones.correo,e.target,"mail")
+            validarCampos(expresiones.correo,e.target,"email")
         break;
         case "motives":
             validarCampos(expresiones.motivos,e.target,"motives")
         break;
-        case "message":
+        case "textarea":
             validarCampos(expresiones.mensaje,e.target,"textarea")
         break;
        }
@@ -198,17 +170,48 @@ $btnMode.addEventListener("click",e=>{
     });
 
   /*  $textarea.addEventListener("keyup",validarFormulario); */
-
+  console.log(campos)
    $form.addEventListener("submit",(e)=>{
-    console.log(campos.nombre)
-        e.preventDefault();
-        if(campos.nombre && campos.correo && campos.motivos){
-            $form.reset();
+   
+    e.preventDefault();        /*   */
+        if(campos.name && campos.email && campos.motives && campos.textarea ){
            
-            console.log("Enviado");
+            fetch("https://formsubmit.co/ajax/riosfacundo.isaias@gmail.com", {
+                method: "POST",
+                body: new FormData(e.target),
+              })
+                .then((res) => (res.ok ? res.json() : Promise.reject(res)))
+                .then((json) => {
+                  console.log(json);
+                 /*  location.hash = "#gracias"; */
 
-       }else{
-        console.log(campos.nombre)
+                    $form.reset();
+                    $inputs.forEach((input)=>{
+                        input.classList.remove("input-form-correcto")
+                    })
+                  console.log("formulario enviado")
+                })
+                .catch((err) => {
+                  console.log(err);
+                  let message =
+                    err.statusText || "Ocurrió un error al enviar, intenta nuevamente";
+                  /* $response.querySelector(
+                    "h3"
+                  ).innerHTML = `Error ${err.status}: ${message}`; */
+                  console.log(message)
+                })
+                .finally(() => {
+                /*   $loader.classList.add("none"); */
+                  setTimeout(() => {
+                   let h1=d.createElement("h1")
+                   h1.textContent="Muchas gracias"
+                   $form.appendChild(h1)
+                  }, 3000);
+                });
+        
+
+        }else{
+     
         console.log("error")
        }
 
