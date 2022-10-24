@@ -18,14 +18,14 @@
       <section class="section-menu container">
         <div class="logo">
          
-          <h2>Rios<span>fac</span>undo</h2>
+         <h3>riosfacundo</h3>
         </div>
        
       
 
         <nav class="nav-menu">
           <div class="nav-items">
-            <a href="#inicio" class=" menu-link btn-active">Home</a>
+            <a href="#inicio" class="menu-link">Home</a>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -86,7 +86,6 @@
             </svg>
           </div>
         
-          </div>
         </nav>
         <div class="btns-menu">
           <button class="btn-mode">
@@ -135,11 +134,12 @@
           </div>
 
           <div class="home-information">
-            <h2>Hello,I'm</h2>
-            <h1>Facundo Isaias Rios</h1>
+            <h2>Hi,I'm Facundo Rios</h2>
+              <h4>Frontend developer</h4>
+           
 
-            <!-- <p>Soy analista en sistemas y apasionado del desarrollo web</p> -->
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam consequuntur reiciendis aliquid maiores voluptates reprehenderit?</p>
+            <!-- <p></p> -->
+            <p>Soy analista en sistemas y apasionado del desarrollo web</p>
             <a href="#contacto" class="btn cta">Contactame</a>
             <a href="assets/cv 2022 Rios Facundo actualizado.pdf" class="btn cv"  target="_blank"
             rel="noopener">Descargar CV</a>
@@ -230,12 +230,63 @@
         </div>
       </section>
       <section id="educacion" class="educacion container">
-        <h2>educacion</h2>
+        <h2>Educacion</h2>
+        <div class="timeline-items">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2022</div>
+            <div class="timeline-content">
+              <h3>Ingenieria en informatica</h3>
+              <p> Universidad Nacional de la Matanza(UNLam) -En curso</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2019</div>
+            <div class="timeline-content">
+              <h3>Analista de sistemas</h3>
+              <p>Escuela Superios de Buenos Aires(ESBA)-Graduado</p>
+            </div>
+          </div>
+         
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2021</div>
+            <div class="timeline-content">
+              <h3>Git Desarrollo COlaborativo</h3>
+              <p>Educacion IT(Curso certificado). </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2020</div>
+            <div class="timeline-content">
+              <h3>Javascript Avanzado</h3>
+              <p>Educacion IT(Curso certificado). </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2019</div>
+            <div class="timeline-content">
+              <h3>Desarrollo web con HTML-Base de datos y SQL</h3>
+              <p>Educacion IT(Curso certificado). </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2018</div>
+            <div class="timeline-content">
+              <h3>Instituto Republica Argentina</h3>
+              <p>Bachiller en administracion y economia </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section id="contacto" class="contacto container">
         <h2 >Get in touch</h2>
-
+      <div class="container-options-form">
         <div class="grid-info-contact">
           <div class="item contact">
             <svg
@@ -292,7 +343,7 @@
               class="input-form"
               name="name"
             />
-            <p class="form-input-error none">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+            <p class="form-input-error none ">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
           </div>
 
          
@@ -326,13 +377,26 @@
             name="textarea"
           class="input-form"
           ></textarea>
-          <p class="form-input-error none">El usuario tiene que ser de 10 a 150 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+          <p class="form-input-error none ">El usuario tiene que ser de 10 a 150 dígitos y solo puede contener numeros, letras y guion bajo.</p>
          </div>
-          <input type="submit" class="btn enviar" value="Send message"> </input>
+          <input type="submit" class="btn enviar" value="Send message"> 
+      
         </form>
-        <svg class="loader">
-          <circle cx="50" cy="50" r="40"></circle>
-        </svg>
+      
+      </div>
+      <div class="container-loader none">
+        <img src="assets/tail-spin.svg" alt="Loader-form">
+      </div>
+  
+        
+     <div class="modal" id="gracias">
+        <div class="container-modal" >
+          <figure class="container-img-modal">
+            <img src="assets/3646374.jpg" alt="email-enviado">
+          </figure>
+          <h3>Muchas gracias,su correo ha sido enviado</h3>
+        </div>
+     </div>
    </section>
    </main>
     <footer class="footer">

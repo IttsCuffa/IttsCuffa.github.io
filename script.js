@@ -110,15 +110,15 @@ $btnMode.addEventListener("click",e=>{
     $inputs=d.querySelectorAll(".input-form"),
     $textarea=d.querySelector("textarea"),
     $form=d.querySelector(".form")
-
+    $loader=d.querySelector(".container-loader")
    
 
 
    const expresiones={
-    nombre:/^[a-zA-Z0-9\_\-]{4,16}$/,//Letras ,numeros,guion y guion bajo
+    nombre:/^[a-zA-Z0-9\_\-\s]{4,16}$/,//Letras ,numeros,guion y guion bajo
    correo:/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-   motivos:/^[a-zA-Z0-9\-]{4,20}$/, //Letras ,numeros,guion 
-   mensaje:/^[a-zA-ZÀ-ÿ-u00f1-u00d10-9\_\-]{10,150}$/
+   motivos:/^[a-zA-Z0-9\-\s]{4,20}$/, //Letras ,numeros,guion 
+   mensaje:/^[a-zA-ZÀ-ÿ-u00f1-u00d10-9\-\s]{4,150}$/
    }
 
  const campos={
@@ -173,40 +173,36 @@ $btnMode.addEventListener("click",e=>{
   console.log(campos)
    $form.addEventListener("submit",(e)=>{
    
-    e.preventDefault();        /*   */
+    e.preventDefault();   
+    $loader.classList.remove("none");     /*   */
         if(campos.name && campos.email && campos.motives && campos.textarea ){
            
-            fetch("https://formsubmit.co/ajax/riosfacundo.isaias@gmail.com", {
+            fetch("https://formsubmit.co/ajax/rfxxj.cipko18@jyplo.com", {
                 method: "POST",
                 body: new FormData(e.target),
               })
                 .then((res) => (res.ok ? res.json() : Promise.reject(res)))
                 .then((json) => {
-                  console.log(json);
-                 /*  location.hash = "#gracias"; */
-
+                
+                    location.hash="#gracias";
                     $form.reset();
                     $inputs.forEach((input)=>{
                         input.classList.remove("input-form-correcto")
                     })
-                  console.log("formulario enviado")
+                
                 })
                 .catch((err) => {
                   console.log(err);
+
                   let message =
-                    err.statusText || "Ocurrió un error al enviar, intenta nuevamente";
-                  /* $response.querySelector(
-                    "h3"
-                  ).innerHTML = `Error ${err.status}: ${message}`; */
-                  console.log(message)
+                    err.statusText || "Ocurrió un error al "
                 })
                 .finally(() => {
-                /*   $loader.classList.add("none"); */
+                  $loader.classList.add("none");
+               
                   setTimeout(() => {
-                   let h1=d.createElement("h1")
-                   h1.textContent="Muchas gracias"
-                   $form.appendChild(h1)
-                  }, 3000);
+                    location.hash="#close"
+                  }, 3000);  
                 });
         
 
@@ -221,3 +217,4 @@ $btnMode.addEventListener("click",e=>{
 
    
 })();
+
