@@ -30,17 +30,22 @@
    const $navMenu=d.querySelector(".nav-menu")
    const header=d.querySelector("header")
    const $svgLinks=d.querySelectorAll(".svg-link")
+   const $containerProject=d.querySelectorAll(".container-project")
+   const   $containerRedes=d.querySelectorAll(".container-redes svg")
+   const $sectionMenu=d.querySelector(".section-menu")
+   const $timeContent=d.querySelectorAll(".timeline-content");
+   const $itemContact=d.querySelectorAll(".item")
    const ls=localStorage;
     const $moon=d.querySelector(".moon");
     const $sun=d.querySelector(".sun");
-    $containerRedes=d.querySelectorAll(".container-redes svg")
+
         
 $btnMode.addEventListener("click",e=>{
-   if($moon.matches(".none")){
-        lightMode();
-   }else{
- 
+   if($sun.matches(".none")){
     darkMode();
+   }else{
+    lightMode();
+    
    }
 })
    /* carga del dom-testing de dark o light */
@@ -59,47 +64,67 @@ $btnMode.addEventListener("click",e=>{
            
         })
 
-        let darkMode=()=>{
-            $moon.classList.add("none");
-            $sun.classList.remove("none");
-            body.classList.add("dark-mode");
-            header.classList.add("dark-mode");
-             $navMenu.classList.add("dark-mode");
-             
-           
+        let lightMode=()=>{
+            $moon.classList.remove("none");
+            $sun.classList.add("none");
+            body.classList.add("light-mode");
+            header.classList.add("light-mode");
+             $navMenu.classList.add("light-mode");
+             $sectionMenu.classList.add("light-mode");
+            
              $menuLinks.forEach(el => {
-                 el.classList.add("dark-mode")
+                 el.classList.add("light-mode")
                });
             $svgLinks.forEach(el=>{
-             el.classList.add("dark-mode")
+             el.classList.add("light-mode")
 
             })
             $containerRedes.forEach(el=>{
-                el.classList.add("dark-mode")
+                el.classList.add("light-mode")
    
                })
-            ls.setItem("theme","dark")
+               $containerProject.forEach(el => {
+                el.classList.add("light-mode-container-project")
+              });
+              $timeContent.forEach(el => {
+                el.classList.add("light-mode-container-project")
+              });
+              $itemContact.forEach(el => {
+                el.classList.add("light-mode-container-project")
+              });
+               ls.setItem("theme","light");
+
         }
      
        
-        let lightMode=()=>{
-            $sun.classList.add("none");
-            $moon.classList.remove("none");
-            body.classList.remove("dark-mode");
-            header.classList.remove("dark-mode");
-             $navMenu.classList.remove("dark-mode");
-           
+        let darkMode=()=>{
+            $sun.classList.remove("none");
+            $moon.classList.add("none");
+            body.classList.remove("light-mode");
+            header.classList.remove("light-mode");
+             $navMenu.classList.remove("light-mode");
+             $sectionMenu.classList.remove("light-mode")
+             
              $menuLinks.forEach(el => {
-                 el.classList.remove("dark-mode")
+                 el.classList.remove("light-mode")
                });
             $svgLinks.forEach(el=>{
-             el.classList.remove("dark-mode")
+             el.classList.remove("light-mode")
             });
             $containerRedes.forEach(el=>{
-                el.classList.remove("dark-mode")
+                el.classList.remove("light-mode")
    
                })
-            ls.setItem("theme","light")
+               $containerProject.forEach(el => {
+                el.classList.remove("light-mode-container-project")
+              });
+               $timeContent.forEach(el => {
+                el.classList.remove("light-mode-container-project")
+              });
+              $itemContact.forEach(el => {
+                el.classList.remove("light-mode-container-project")
+              });
+            ls.setItem("theme","dark")
         }
        
     })();
