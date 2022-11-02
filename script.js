@@ -34,7 +34,9 @@
    const   $containerRedes=d.querySelectorAll(".container-redes svg")
    const $sectionMenu=d.querySelector(".section-menu")
    const $timeContent=d.querySelectorAll(".timeline-content");
-   const $itemContact=d.querySelectorAll(".item")
+   const $itemContact=d.querySelectorAll(".item");
+  const $itemInput=d.querySelectorAll(".form div input")
+  const $textarea=d.querySelector("textarea")
    const ls=localStorage;
     const $moon=d.querySelector(".moon");
     const $sun=d.querySelector(".sun");
@@ -71,7 +73,7 @@ $btnMode.addEventListener("click",e=>{
             header.classList.add("light-mode");
              $navMenu.classList.add("light-mode");
              $sectionMenu.classList.add("light-mode");
-            
+             $textarea.classList.add("light-mode");
              $menuLinks.forEach(el => {
                  el.classList.add("light-mode")
                });
@@ -92,6 +94,9 @@ $btnMode.addEventListener("click",e=>{
               $itemContact.forEach(el => {
                 el.classList.add("light-mode-container-project")
               });
+              $itemInput.forEach(el => {
+                el.classList.add("light-mode")
+              });
                ls.setItem("theme","light");
 
         }
@@ -104,7 +109,7 @@ $btnMode.addEventListener("click",e=>{
             header.classList.remove("light-mode");
              $navMenu.classList.remove("light-mode");
              $sectionMenu.classList.remove("light-mode")
-             
+             $textarea.classList.remove("light-mode");
              $menuLinks.forEach(el => {
                  el.classList.remove("light-mode")
                });
@@ -123,6 +128,9 @@ $btnMode.addEventListener("click",e=>{
               });
               $itemContact.forEach(el => {
                 el.classList.remove("light-mode-container-project")
+              });
+              $itemInput.forEach(el => {
+                el.classList.remove("light-mode")
               });
             ls.setItem("theme","dark")
         }
@@ -243,3 +251,8 @@ $btnMode.addEventListener("click",e=>{
    
 })();
 
+(()=>{
+  
+ 
+  
+})();

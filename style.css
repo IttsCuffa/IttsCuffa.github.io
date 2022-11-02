@@ -133,14 +133,17 @@ p{
     border: none;
     cursor: pointer;
     background-color: transparent;
+    
 }
-.btn-mode svg,
-.btn-menu svg{
-    fill: var(--white);
-    pointer-events: none;
-}
-.btn-mode .moon{
+
+.moon{
     fill: var(--first-color);
+    pointer-events: none;
+
+}
+.sun{
+    fill: var(--first-color);
+    pointer-events: none;
 }
 
 
@@ -186,9 +189,7 @@ cursor: pointer;
 
     margin-right: 0.5rem;
 }
-.menu-link svg{
-    fill: var(--first-color);
-}
+
 
 
 
@@ -211,7 +212,7 @@ cursor: pointer;
 
 }
 
-.container-user-profile .user-img{
+ .user-img{
 position: absolute;
 right: 0;
 margin: auto;
@@ -219,7 +220,7 @@ left: 0;
 top: 10%;
 width: 50%;
 height: auto;
-object-fit: cover;
+object-fit:cover;
 
  
 }
@@ -523,6 +524,7 @@ object-fit: cover;
     align-items: center;
     opacity: 0;
     pointer-events: none;
+   
 }
 .modal#gracias:target{
     opacity: 1;
@@ -537,6 +539,7 @@ object-fit: cover;
     border-radius: 5px;
     text-align: center;
     overflow: hidden;
+    color: var(--black);
 
   }
   .container-img-modal{
@@ -591,8 +594,9 @@ footer{
     color:var(--black);
     background-color: var(--white);
     box-shadow: 10px 12px 15px -7px rgba(0, 0, 0, 0.3); 
-    
+    fill: var(--first-color);
 }
+
 
 
 
@@ -627,7 +631,7 @@ footer{
         top: 0;
     }
     .section-menu{
-       
+        box-shadow: 0;
         padding: 1;
     }
     .section-menu .btn-menu{
