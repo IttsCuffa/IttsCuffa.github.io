@@ -186,7 +186,7 @@ cursor: pointer;
 .menu-link{
     text-decoration: none;
     
-
+    color:var(--white) ;
     margin-right: 0.5rem;
 }
 
@@ -405,7 +405,7 @@ object-fit:cover;
   }
 /* Formulario */
 .contacto{
-    min-height: 100vh;
+   
     width: 90%;
     border-radius: 5px;
  
@@ -633,6 +633,7 @@ footer{
     .section-menu{
         box-shadow: 0;
         padding: 1;
+        
     }
     .section-menu .btn-menu{
         display: none;
@@ -662,7 +663,7 @@ footer{
   .portafolio{
     
     height: 500px;
-    height: 100vh;
+   
  
   }
  
@@ -672,6 +673,10 @@ footer{
     grid-template-rows: repeat(1,auto);
  
   
+    }
+    .contacto{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
     }
     /* form */
     .container-options-form{
@@ -719,6 +724,7 @@ footer{
         grid-area: btn;
         place-self:center center;
         display: block;
+       
     }
    footer{
     margin-bottom: 0;
