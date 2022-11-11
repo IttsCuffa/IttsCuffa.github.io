@@ -202,27 +202,26 @@ cursor: pointer;
   
    
 }
-.container-home .container-user-profile{
-   width: 200px;
-   height: 200px;
-            background-color:  var(--purple-pastel);
-    position: relative;
+ .container-user-profile{
+   width: 280px;
+   height: 280px;
+          
+background-color: var(--first-color);
     overflow: hidden;
-    border-radius: 50%;
+    border-radius: 100%;
+    position: relative;
 
 }
 
- .user-img{
-position: absolute;
-right: 0;
-margin: auto;
-left: 0;
-top: 10%;
-width: 50%;
-height: auto;
-object-fit:cover;
-
+.container-user-profile .user-img{
+  position:absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: -3.5rem;
+  width: 220px;
  
+  
 }
 .home-information{
    
@@ -271,7 +270,7 @@ object-fit:cover;
 .projects{
     display: grid;
     grid-template-columns: repeat(1,1fr);
-    grid-template-rows: repeat(4,auto);
+    grid-template-rows: repeat(4,400px);
    gap: 2rem;
 
 
@@ -288,14 +287,22 @@ object-fit:cover;
 }
 .container-project img{
     border-radius: 1rem;
-    
+    width:100%;
+    height: 60%;
+
+}
+.container-info-project{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
 }
 
-.container-project p{
+.container-info-project p{
     margin-top: 0.5rem;
 }
 
-.container-project .btn-project-portfolio{
+.container-info-project .btn-project-portfolio{
    
 
     display: inline-block;
@@ -503,6 +510,10 @@ object-fit:cover;
     cursor: pointer;
 
 }
+
+.disabled{
+
+}
 .container-loader{
     text-align: center;
     margin: 2rem;
@@ -593,7 +604,7 @@ footer{
 .light-mode-container-project{
     color:var(--black);
     background-color: var(--white);
-    box-shadow: 10px 12px 15px -7px rgba(0, 0, 0, 0.3); 
+    box-shadow: 7px 4px 38px -3px rgba(0,0,0,0.44);
     fill: var(--first-color);
 }
 
@@ -669,8 +680,8 @@ footer{
  
   .projects{
    
-    grid-template-columns: repeat(4,auto);
-    grid-template-rows: repeat(1,auto);
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(1,400px);
  
   
     }

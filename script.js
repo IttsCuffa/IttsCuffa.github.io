@@ -209,8 +209,8 @@ $btnMode.addEventListener("click",e=>{
     e.preventDefault();   
     $loader.classList.remove("none");     /*   */
         if(campos.name && campos.email && campos.motives && campos.textarea ){
-           
-            fetch("https://formsubmit.co/ajax/rfxxj.cipko18@jyplo.com", {
+           console.log(campos)
+            fetch("https://formsubmit.co/ajax/riosfacundo.isaias@gmail.com", {
                 method: "POST",
                 body: new FormData(e.target),
               })
@@ -227,8 +227,7 @@ $btnMode.addEventListener("click",e=>{
                 .catch((err) => {
                   console.log(err);
 
-                  let message =
-                    err.statusText || "Ocurrió un error al "
+                 
                 })
                 .finally(() => {
                   $loader.classList.add("none");
