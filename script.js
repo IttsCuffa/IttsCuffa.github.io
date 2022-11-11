@@ -208,7 +208,7 @@ $btnMode.addEventListener("click",e=>{
    
     e.preventDefault();   
     $loader.classList.remove("none");     /*   */
-        if(campos.name && campos.email && campos.motives && campos.textarea ){
+        if(campos.name && campos.email && campos.motives  ){
            console.log(campos)
             fetch("https://formsubmit.co/ajax/riosfacundo.isaias@gmail.com", {
                 method: "POST",
