@@ -20,123 +20,28 @@
     })
 
 })();
-/* dark mode */
 
-    (()=>{
-        const d=document;
-        const $btnMode=d.querySelector(".btn-mode");
-   const body=d.querySelector("body");
-    const $menuLinks=d.querySelectorAll(".menu-link ")
-   const $navMenu=d.querySelector(".nav-menu")
-   const header=d.querySelector("header")
-   const $svgLinks=d.querySelectorAll(".svg-link")
-   const $containerProject=d.querySelectorAll(".container-project")
-   const   $containerRedes=d.querySelectorAll(".container-redes svg")
-   const $sectionMenu=d.querySelector(".section-menu")
-   const $timeContent=d.querySelectorAll(".timeline-content");
-   const $itemContact=d.querySelectorAll(".item");
-  const $itemInput=d.querySelectorAll(".form div input")
-  const $textarea=d.querySelector("textarea")
-   const ls=localStorage;
-    const $moon=d.querySelector(".moon");
-    const $sun=d.querySelector(".sun");
 
-        
-$btnMode.addEventListener("click",e=>{
-   if($sun.matches(".none")){
-    darkMode();
-   }else{
-    lightMode();
-    
-   }
+
+/**Menu desplegable */
+(()=>{
+  const d=document;
+  const listItems=d.querySelectorAll(".list-button-click");
+
+listItems.forEach(listItem=>{
+  listItem.addEventListener("click",()=>{
+    listItem.classList.toggle('arrow');
+    let height=0;
+    let menu=listItem.nextElementSibling;
+    if(menu.clientHeight=="0"){
+      height=menu.scrollHeight;
+    }
+    menu.style.height=  `${height}px`;
+  })
 })
-   /* carga del dom-testing de dark o light */
-        d.addEventListener("DOMContentLoaded",e=>{
-            /* Si al obtener el elemento(clave) no existe(es igual a null) entonces le establecemos una clave llamada theme con su valor dark */
-            if(ls.getItem("theme")===null){
-                ls.setItem("theme","dark")
-            }
 
-            if(ls.getItem("theme")==="dark"){
-                darkMode();
-            }
-            if(ls.getItem("theme")==="light"){
-                lightMode();
-            }
-           
-        })
 
-        let lightMode=()=>{
-            $moon.classList.remove("none");
-            $sun.classList.add("none");
-            body.classList.add("light-mode");
-            header.classList.add("light-mode");
-             $navMenu.classList.add("light-mode");
-             $sectionMenu.classList.add("light-mode");
-             $textarea.classList.add("light-mode");
-             $menuLinks.forEach(el => {
-                 el.classList.add("light-mode")
-               });
-            $svgLinks.forEach(el=>{
-             el.classList.add("light-mode")
-
-            })
-            $containerRedes.forEach(el=>{
-                el.classList.add("light-mode")
-   
-               })
-               $containerProject.forEach(el => {
-                el.classList.add("light-mode-container-project")
-              });
-              $timeContent.forEach(el => {
-                el.classList.add("light-mode-container-project")
-              });
-              $itemContact.forEach(el => {
-                el.classList.add("light-mode-container-project")
-              });
-              $itemInput.forEach(el => {
-                el.classList.add("light-mode")
-              });
-               ls.setItem("theme","light");
-
-        }
-     
-       
-        let darkMode=()=>{
-            $sun.classList.remove("none");
-            $moon.classList.add("none");
-            body.classList.remove("light-mode");
-            header.classList.remove("light-mode");
-             $navMenu.classList.remove("light-mode");
-             $sectionMenu.classList.remove("light-mode")
-             $textarea.classList.remove("light-mode");
-             $menuLinks.forEach(el => {
-                 el.classList.remove("light-mode")
-               });
-            $svgLinks.forEach(el=>{
-             el.classList.remove("light-mode")
-            });
-            $containerRedes.forEach(el=>{
-                el.classList.remove("light-mode")
-   
-               })
-               $containerProject.forEach(el => {
-                el.classList.remove("light-mode-container-project")
-              });
-               $timeContent.forEach(el => {
-                el.classList.remove("light-mode-container-project")
-              });
-              $itemContact.forEach(el => {
-                el.classList.remove("light-mode-container-project")
-              });
-              $itemInput.forEach(el => {
-                el.classList.remove("light-mode")
-              });
-            ls.setItem("theme","dark")
-        }
-       
-    })();
-
+})();
 /*Expresiones regulares-formulario  */
 (()=> {
     const d=document,
@@ -208,7 +113,7 @@ $btnMode.addEventListener("click",e=>{
    
     e.preventDefault();   
     $loader.classList.remove("none");     /*   */
-        if(campos.name && campos.email && campos.motives  ){
+        if(campos.name && campos.email && campos.motives){
            console.log(campos)
             fetch("https://formsubmit.co/ajax/riosfacundo.isaias@gmail.com", {
                 method: "POST",
@@ -249,9 +154,31 @@ $btnMode.addEventListener("click",e=>{
 
    
 })();
-
+/**BTN Scroll top */
 (()=>{
-  
- 
-  
+  const d=document,
+  $btnScroll=d.querySelector(".btn-scroll-top")
+
+
+
+  window.addEventListener("scroll",e=>{
+    let scroll=d.documentElement.scrollTop;
+    if(scroll>575){
+      
+      $btnScroll.classList.remove("hidden")
+    }else{
+  $btnScroll.classList.add("hidden")
+    }
+  })
+
+
+  d.addEventListener("click",(e)=>{
+    if(e.target.matches(".btn-scroll-top")){
+      window.scrollTo({
+        behavior:"smooth",
+        top:0
+      })
+    }
+  })
+
 })();
