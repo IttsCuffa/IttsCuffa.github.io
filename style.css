@@ -807,3 +807,16 @@ footer{
 }
 
 
+.oculto{
+   opacity: 0;
+   filter:blur(10px);
+   transform: translateX(-100%);
+   transition: all 1s;
+
+}
+.mostrar-seccion{
+
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}

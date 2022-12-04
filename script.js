@@ -182,3 +182,20 @@ listItems.forEach(listItem=>{
   })
 
 })();
+
+
+(()=>{
+  const d=document;
+ const section=d.querySelectorAll("main section")
+
+
+  const observer=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("mostrar-seccion")
+      }
+    })
+  })
+ 
+  section.forEach(el=>observer.observe(el))
+})();
