@@ -139,12 +139,16 @@ button{
 
 
  .nav-menu{
+   
     display: grid;
-    grid-template-columns: repeat(2,auto);
+    grid-template-columns: repeat(3,auto);
     grid-template-rows: repeat(2,60px);
-    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
    position: fixed;
    left: 0;
+   
    bottom: 4rem;
    width: 100%;
    opacity: 0;
@@ -167,14 +171,14 @@ button{
 
 .nav-items {
 display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
  padding:0.5rem; 
 cursor: pointer; 
-gap: 5px;
-font-weight: bold;
-}
 
+
+}
 
 
 
@@ -245,7 +249,31 @@ margin: auto;
     border: 1px solid var(--title-color);
 }
 
+/**Acerca de mi**/
+.about{
+    margin: 2rem auto;
+}
+.container-info-about{
+    margin:2rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.about-img{
+    width: 50%;
+    border-radius: 10px;
+    max-height:400px;
 
+}
+.container-info-about-datos{
+    display: flex;
+    flex-direction: column;
+ 
+    align-items: center;
+    height: 100%;
+    padding: 1rem;
+}
 /* Portafolio */
 .portafolio{
     margin-top: 1rem;
@@ -616,7 +644,7 @@ footer{
 
 .btn-scroll-top{
     position: fixed;
-    z-index: 999;
+    z-index: 997;
     background-color:var(--title-color);
     bottom:  6rem;
     right: 1.2rem;
@@ -655,7 +683,29 @@ footer{
     .home-information{
         grid-area: info;
     }
+.container-info-about{
+   
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
+    }
+    .container-info-about >*{
+        width: 50%;
+    }
+    .about-img{
+        object-fit: contain;
+        border-radius: 20px;
+    }
+    .container-info-about-datos{
+        justify-content: space-evenly;
+        height: 100%;
+    }
+.container-info-about-datos a{
+    display: inline-block;
+    width: 50%;
+
+}
     .container-educacion{
         grid-template-columns: repeat(2,auto);
         grid-template-rows: 1;
@@ -714,11 +764,14 @@ footer{
 
  
    
-   /*  */
+   /* about */
+   .about{
+    padding:6rem 6rem;
+   }
   /* Portafolio */
   .portafolio{
     padding:6rem 6rem;
-    height: 500px;
+    height: auto;
  
  
   }
@@ -733,11 +786,10 @@ footer{
     /*Educacion*/
 .educacion{
     padding:6rem 6rem;
+
 }
     .contacto{
-      
-        padding:6rem 6rem;
-        margin: 2rem auto;
+        padding:6rem 6rem; 
     }
 
     /* form */

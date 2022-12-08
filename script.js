@@ -3,7 +3,8 @@
     const d=document;
     const $btnMenu=d.querySelector(".btn-menu");
     const $nav=d.querySelector(".nav-menu");
-    const $bgBlack=d.querySelector(".bg-black")
+    const $bgBlack=d.querySelector(".bg-black");
+    const $logo=d.querySelector(".logo")
     /* Abrir menu */
     $btnMenu.addEventListener("click",e=>{
         $btnMenu.firstElementChild.classList.toggle("none")
@@ -17,6 +18,7 @@
         $btnMenu.firstElementChild.classList.remove("none")
         $btnMenu.lastElementChild.classList.add("none")
         $nav.classList.remove("close-menu");
+        
     })
 
 })();
